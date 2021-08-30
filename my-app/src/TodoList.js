@@ -6,13 +6,16 @@ const TodoList = () => {
     { id: 2, title: 'Submit pull request' },
     { id: 3, title: 'Respond to introduction email' },
   ];
-  
+
   return (
-    <ul>
-      {todoList.map((todo) => (
-        <li key={todo.id}>{todo.title}</li>
-      ))}
-    </ul>
+    <div>
+      <h1>Todo List</h1>
+      <ul>
+        {todoList.map((todo) => (
+          <li key={todo.id}>{todo.title}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
