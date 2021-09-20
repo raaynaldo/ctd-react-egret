@@ -1,12 +1,12 @@
 import React from 'react';
 import TodoListItem from './TodoListItem';
 
-const TodoList = () => {
-  const todoList = [
-    { id: 1, title: 'Write Lesson 1.1 instructions' },
-    { id: 2, title: 'Submit pull request' },
-    { id: 3, title: 'Respond to introduction email' },
-  ];
+const TodoList = ({ todoList }) => {
+  // const todoList = [
+  //   { id: 1, title: 'Write Lesson 1.1 instructions' },
+  //   { id: 2, title: 'Submit pull request' },
+  //   { id: 3, title: 'Respond to introduction email' },
+  // ];
 
   return (
     <div>
