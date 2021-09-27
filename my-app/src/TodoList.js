@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoListItem from './TodoListItem';
 
-const TodoList = ({ todoList }) => {
+const TodoList = ({ todoList, onRemoveTodo }) => {
   // const todoList = [
   //   { id: 1, title: 'Write Lesson 1.1 instructions' },
   //   { id: 2, title: 'Submit pull request' },
@@ -12,7 +12,7 @@ const TodoList = ({ todoList }) => {
     <div>
       <ul>
         {todoList.map((todo) => (
-          <TodoListItem key={todo.id} todo={todo} />
+          <TodoListItem key={todo.id} todo={todo} onRemoveTodo={onRemoveTodo} />
         ))}
       </ul>
     </div>

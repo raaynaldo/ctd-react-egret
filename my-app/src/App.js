@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AddTodoForm from './AddTodoForm';
-import ReactFlow from './ReactFlow';
+// import ReactFlow from './ReactFlow';
 import TodoList from './TodoList';
 
 function useSemiPersistentState() {
@@ -24,11 +24,16 @@ function App() {
     setTodoList([...todoList, newTodo]);
   };
 
+  const removeTodo = (id) => {
+    const newTodoList = todoList.filter((todo) => todo.id !== id);
+    setTodoList(newTodoList);
+  };
+
   return (
     <>
       <h1>Todo List</h1>
       <AddTodoForm onAddTodo={addTodo} />
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
       {/* <ReactFlow /> */}
     </>
   );
