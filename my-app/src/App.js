@@ -22,6 +22,9 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // console.log(process.env);
+  // console.log(process.env.REACT_APP_AIRTABLE_API_KEY);
+
   useEffect(() => {
     new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -33,10 +36,24 @@ function App() {
           },
         });
       }, 2000);
-    }).then((result) => {
+    })
+    .then((result) => {
       setIsLoading(false);
       setTodoList(result.data.todoList);
     });
+
+    // fetch(
+    //   `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Defatult`,
+    //   {
+    //     headers: {
+    //       Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+    //     },
+    //   }
+    // )
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //   });
   }, []);
 
   useEffect(() => {
